@@ -10,7 +10,7 @@
     "fitbit-sdk-types": "^7.0.0"
   },
   "fitbit": {
-    "appUUID": "a8f3d2c1-7e94-4b8a-9f6e-3c5d7a8b2e1f",
+    "appUUID": "f96dc2ec-85c9-43df-9ca4-804f32b48f04",
     "appType": "clockface",
     "appDisplayName": "Modern Watch Face",
     "iconFile": "resources/icon.png",
