@@ -92,6 +92,11 @@
   fill: #475569;
 }
 
+/* ── Heart background (opacity is set via fill-opacity attribute on the element) */
+.heart-green { fill: #22c55e; }
+.heart-pink  { fill: #f472b6; }
+.heart-red   { fill: #ef4444; }
+
 /* ── Per-metric colour overrides ─────────────────────────────────────────────── */
 .hr-label,
 .hr-value {

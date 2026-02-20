@@ -30,6 +30,10 @@
   <!-- Inner accent ring (thinner, dimmer) -->
   <circle cx="168" cy="168" r="144" class="ring-inner" />
 
+  <!-- ── Heart background (colour driven by heart rate) ────────────────── -->
+  <path id="heart-bg" class="heart-pink" fill="#f472b6" fill-opacity="0.55"
+    d="M 168 238 C 82 195 58 140 88 106 C 108 72 145 72 168 100 C 191 72 228 72 248 106 C 278 140 254 195 168 238 Z" />
+
   <!-- ── Date section ───────────────────────────────────────────────────── -->
   <text id="day"  x="168" y="78"  class="day-text">MON</text>
   <text id="date" x="168" y="106" class="date-text">FEB 20</text>
@@ -48,16 +52,16 @@
 
   <!-- Heart rate (left) -->
   <text x="88" y="257" class="info-label hr-label">HEART</text>
-  <text id="heart-rate" x="88" y="279" class="info-value hr-value">--</text>
+  <text id="heart-rate" x="88" y="279" class="info-value hr-value" text-length="4">--</text>
   <text x="88" y="293" class="info-unit">bpm</text>
 
   <!-- Steps (centre) -->
   <text x="168" y="257" class="info-label steps-label">STEPS</text>
-  <text id="steps" x="168" y="279" class="info-value steps-value">0</text>
+  <text id="steps" x="168" y="279" class="info-value steps-value" text-length="6">0</text>
 
   <!-- Battery (right) -->
   <text x="248" y="257" class="info-label batt-label">BATT</text>
-  <text id="battery" x="248" y="279" class="info-value batt-value">--%</text>
+  <text id="battery" x="248" y="279" class="info-value batt-value" text-length="5">--%</text>
 
   <!-- Vertical dividers between info cells -->
   <rect x="127" y="248" width="1" height="50" class="divider" />

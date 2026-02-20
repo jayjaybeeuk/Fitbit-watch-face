@@ -1,5 +1,5 @@
 /**
- * Modern Fitbit Watch Face
+ * Reactive Heart Watch Face
  * Displays time, date, heart rate, steps, and battery level
  * on a dark navy background with a cyan accent theme.
  */
@@ -20,6 +20,7 @@ const dayEl     = document.getElementById("day")        as TextElement;
 const hrEl      = document.getElementById("heart-rate") as TextElement;
 const stepsEl   = document.getElementById("steps")      as TextElement;
 const batteryEl = document.getElementById("battery")    as TextElement;
+const heartBgEl = document.getElementById("heart-bg")   as GraphicsElement;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const DAYS: string[] = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -29,6 +30,17 @@ const MONTHS: string[] = [
 ];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
+
+/**
+ * Update the heart background colour based on heart rate zone:
+ *  < 60 bpm  → green
+ * 60–100 bpm → pink
+ * > 100 bpm  → red
+ */
+function updateHeartColor(hr: number): void {
+  const zone = hr < 60 ? "heart-green" : hr <= 100 ? "heart-pink" : "heart-red";
+  (heartBgEl as any).class = zone;
+}
 
 /** Zero-pad a number to two digits (e.g. 5 → "05"). */
 function zeroPad(n: number): string {
@@ -58,7 +70,13 @@ if (HeartRateSensor && appbit.permissions.granted("access_heart_rate")) {
   hrm = new HeartRateSensor({ frequency: 1 });
   hrm.addEventListener("reading", () => {
     if (hrm) {
-      hrEl.text = hrm.heartRate != null ? String(hrm.heartRate) : "--";
+      const hr = hrm.heartRate;
+      if (hr != null) {
+        hrEl.text = String(hr);
+        updateHeartColor(hr);
+      } else {
+        hrEl.text = "--";
+      }
     }
   });
   hrm.start();

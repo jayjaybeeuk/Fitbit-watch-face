@@ -1,28 +1,28 @@
-# Modern Fitbit Watch Face
+# Reactive Heart Watch Face
 
 A clean, dark-themed digital watch face for **Fitbit Versa 3** and **Fitbit Sense** (336 × 336 circular display).
 
 ## Features
 
-| Area | What's shown |
-|------|-------------|
-| Top | Day of week + full date |
-| Centre | `HH:MM` in large electric cyan |
-| Below time | Seconds indicator |
-| Bottom left | Heart rate (bpm) in pink |
+| Area          | What's shown                              |
+| ------------- | ----------------------------------------- |
+| Top           | Day of week + full date                   |
+| Centre        | `HH:MM` in large electric cyan            |
+| Below time    | Seconds indicator                         |
+| Bottom left   | Heart rate (bpm) in pink                  |
 | Bottom centre | Step count (abbreviated: `8.4k`) in green |
-| Bottom right | Battery percentage in amber |
+| Bottom right  | Battery percentage in amber               |
 
 ## Colour palette
 
-| Token | Hex | Used for |
-|-------|-----|----------|
+| Token      | Hex       | Used for         |
+| ---------- | --------- | ---------------- |
 | Background | `#0d1b2a` | Deep navy canvas |
-| Time | `#00d4ff` | Electric cyan |
-| Seconds | `#5eafc7` | Muted teal |
-| Heart rate | `#f472b6` | Pink |
-| Steps | `#4ade80` | Mint green |
-| Battery | `#fbbf24` | Amber |
+| Time       | `#00d4ff` | Electric cyan    |
+| Seconds    | `#5eafc7` | Muted teal       |
+| Heart rate | `#f472b6` | Pink             |
+| Steps      | `#4ade80` | Mint green       |
+| Battery    | `#fbbf24` | Amber            |
 
 ## Project structure
 
@@ -77,20 +77,20 @@ fitbit> install
 
 ## Build targets
 
-| Target key | Device |
-|------------|--------|
-| `meson` | Versa 3 / Sense |
-| `higgs` | Versa 2 |
+| Target key | Device          |
+| ---------- | --------------- |
+| `meson`    | Versa 3 / Sense |
+| `higgs`    | Versa 2         |
 
 Add more targets to the `buildTargets` array in `package.json` as needed
 (e.g. `"hera"` for Versa Lite, `"atlas"` for Ionic).
 
 ## Permissions
 
-| Permission | Usage |
-|------------|-------|
+| Permission          | Usage                                    |
+| ------------------- | ---------------------------------------- |
 | `access_heart_rate` | Reads from the optical heart rate sensor |
-| `access_activity` | Reads today's step count |
+| `access_activity`   | Reads today's step count                 |
 
 Both are requested at install time; the app degrades gracefully (`--`)
 if they are denied.
