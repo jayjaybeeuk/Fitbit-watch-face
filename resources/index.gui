@@ -1,0 +1,66 @@
+<!--
+  Modern Watch Face – index.gui
+  Target: Fitbit Versa 3 / Sense  (336 × 336 circular display)
+  Center: (168, 168)   Usable radius: ~153 px
+
+  Layout
+  ──────
+    y ≈  78  Day of week  (MON / TUE …)
+    y ≈ 106  Date         (FEB 20)
+    y = 117  Thin separator
+    y ≈ 185  HH:MM        (large cyan time)
+    y ≈ 215  :SS          (small teal seconds)
+    y = 238  Thin separator
+    y ≈ 257  Info labels  (HEART / STEPS / BATT)
+    y ≈ 278  Info values  (72  /  8.4k  /  85%)
+    y ≈ 293  Sub-unit     (bpm)
+-->
+<svg>
+  <defs>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="import" href="widgets.gui" />
+  </defs>
+
+  <!-- ── Background ─────────────────────────────────────────────────────── -->
+  <rect x="0" y="0" width="100%" height="100%" class="background" />
+
+  <!-- ── Decorative rings ───────────────────────────────────────────────── -->
+  <!-- Outer subtle ring -->
+  <circle cx="168" cy="168" r="153" class="ring-outer" />
+  <!-- Inner accent ring (thinner, dimmer) -->
+  <circle cx="168" cy="168" r="144" class="ring-inner" />
+
+  <!-- ── Date section ───────────────────────────────────────────────────── -->
+  <text id="day"  x="168" y="78"  class="day-text">MON</text>
+  <text id="date" x="168" y="106" class="date-text">FEB 20</text>
+
+  <!-- Separator between date and time -->
+  <rect x="108" y="117" width="120" height="1" class="separator" />
+
+  <!-- ── Time section ───────────────────────────────────────────────────── -->
+  <text id="time"    x="168" y="190" class="time-text">00:00</text>
+  <text id="seconds" x="168" y="218" class="seconds-text">00</text>
+
+  <!-- Separator between time and info -->
+  <rect x="60" y="236" width="216" height="1" class="separator" />
+
+  <!-- ── Bottom info row ────────────────────────────────────────────────── -->
+
+  <!-- Heart rate (left) -->
+  <text x="88" y="257" class="info-label hr-label">HEART</text>
+  <text id="heart-rate" x="88" y="279" class="info-value hr-value">--</text>
+  <text x="88" y="293" class="info-unit">bpm</text>
+
+  <!-- Steps (centre) -->
+  <text x="168" y="257" class="info-label steps-label">STEPS</text>
+  <text id="steps" x="168" y="279" class="info-value steps-value">0</text>
+
+  <!-- Battery (right) -->
+  <text x="248" y="257" class="info-label batt-label">BATT</text>
+  <text id="battery" x="248" y="279" class="info-value batt-value">--%</text>
+
+  <!-- Vertical dividers between info cells -->
+  <rect x="127" y="248" width="1" height="50" class="divider" />
+  <rect x="207" y="248" width="1" height="50" class="divider" />
+
+</svg>

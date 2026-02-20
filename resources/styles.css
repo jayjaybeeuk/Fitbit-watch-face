@@ -1,0 +1,109 @@
+/*
+ * Modern Watch Face – styles.css
+ *
+ * Colour palette
+ * ──────────────
+ *   Background  #0d1b2a  Deep navy
+ *   Ring        #1a3050  Medium navy  (decorative chrome)
+ *   Time        #00d4ff  Electric cyan
+ *   Seconds     #5eafc7  Muted teal
+ *   Day         #ffffff  White
+ *   Date        #94a3b8  Slate
+ *   HR value    #f472b6  Pink
+ *   Step value  #4ade80  Mint green
+ *   Batt value  #fbbf24  Amber
+ *   Labels      #475569  Dim slate
+ *   Separators  #1a3050  Medium navy
+ */
+
+/* ── Background ─────────────────────────────────────────────────────────────── */
+.background {
+  fill: #0d1b2a;
+}
+
+/* ── Decorative rings ────────────────────────────────────────────────────────── */
+.ring-outer {
+  fill: none;
+  stroke: #1a3050;
+  stroke-width: 3;
+}
+
+.ring-inner {
+  fill: none;
+  stroke: #122540;
+  stroke-width: 1;
+}
+
+/* ── Separators / dividers ───────────────────────────────────────────────────── */
+.separator {
+  fill: #1a3050;
+}
+
+.divider {
+  fill: #1a3050;
+}
+
+/* ── Day of week ─────────────────────────────────────────────────────────────── */
+.day-text {
+  font-size: 26;
+  text-anchor: middle;
+  fill: #ffffff;
+}
+
+/* ── Date ────────────────────────────────────────────────────────────────────── */
+.date-text {
+  font-size: 20;
+  text-anchor: middle;
+  fill: #94a3b8;
+}
+
+/* ── Time (HH:MM) ────────────────────────────────────────────────────────────── */
+.time-text {
+  font-size: 82;
+  text-anchor: middle;
+  fill: #00d4ff;
+}
+
+/* ── Seconds ─────────────────────────────────────────────────────────────────── */
+.seconds-text {
+  font-size: 26;
+  text-anchor: middle;
+  fill: #5eafc7;
+}
+
+/* ── Info labels (HEART / STEPS / BATT) ─────────────────────────────────────── */
+.info-label {
+  font-size: 14;
+  text-anchor: middle;
+  fill: #475569;
+}
+
+/* ── Info values ─────────────────────────────────────────────────────────────── */
+.info-value {
+  font-size: 24;
+  text-anchor: middle;
+  fill: #e2e8f0;
+}
+
+/* ── Sub-unit text (bpm) ─────────────────────────────────────────────────────── */
+.info-unit {
+  font-size: 13;
+  text-anchor: middle;
+  fill: #475569;
+}
+
+/* ── Per-metric colour overrides ─────────────────────────────────────────────── */
+.hr-label,
+.hr-value {
+  fill: #f472b6;
+}
+
+.steps-label,
+.steps-value {
+  fill: #4ade80;
+}
+
+.batt-label,
+.batt-value {
+  fill: #fbbf24;
+}
