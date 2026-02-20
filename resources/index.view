@@ -1,5 +1,5 @@
 <!--
-  Modern Watch Face – index.gui
+  Modern Watch Face – index.view
   Target: Fitbit Versa 3 / Sense  (336 × 336 circular display)
   Center: (168, 168)   Usable radius: ~153 px
 
@@ -18,7 +18,7 @@
 <svg>
   <defs>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="import" href="widgets.gui" />
+    <link rel="import" href="widget.defs" />
   </defs>
 
   <!-- ── Background ─────────────────────────────────────────────────────── -->

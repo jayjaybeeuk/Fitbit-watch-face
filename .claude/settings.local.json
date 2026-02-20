@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "WebFetch(domain:dev.fitbit.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(xargs cat:*)",
+      "Bash(npm list:*)",
+      "Bash(npm info:*)",
+      "Bash(python3:*)",
+      "Bash(npm pack:*)",
+      "Bash(npm view:*)",
+      "Bash(npm install:*)",
+      "Bash(xargs -I{} sh -c 'echo \"\"=== {} ===\"\"; cat {}')",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

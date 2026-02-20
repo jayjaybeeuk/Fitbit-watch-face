@@ -1,7 +1,7 @@
 <!--
-  widgets.gui
+  widget.defs
   Widget definitions for the Modern Watch Face.
-  This file is imported by index.gui.
+  This file is imported by index.view.
   No Fitbit system widgets are used in this watch face;
   all UI is built from plain SVG primitives.
 -->

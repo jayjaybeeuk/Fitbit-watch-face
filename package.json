@@ -6,7 +6,8 @@
   "license": "MIT",
   "devDependencies": {
     "@fitbit/sdk": "^6.1.0",
-    "@fitbit/sdk-cli": "^1.7.3"
+    "@fitbit/sdk-cli": "^1.7.3",
+    "fitbit-sdk-types": "^7.0.0"
   },
   "fitbit": {
     "appUUID": "a8f3d2c1-7e94-4b8a-9f6e-3c5d7a8b2e1f",
@@ -18,7 +19,10 @@
       "access_heart_rate",
       "access_activity"
     ],
-    "buildTargets": ["meson", "higgs"]
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ]
   },
   "scripts": {
     "build": "fitbit-build",
