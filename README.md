@@ -73,7 +73,8 @@ so re-theming is a single-file change.
 ├── resources/
 │   ├── index.view        SVG layout for the 336 × 336 display
 │   ├── widget.defs       Widget definitions imported by index.view
-│   └── styles.css        Colours, font sizes, text anchors
+│   ├── styles.css        Colours, font sizes, text anchors
+│   └── icon.png          80 × 80 px app icon referenced by fitbit.iconFile
 ├── .github/
 │   └── workflows/
 │       └── release.yml   Builds and releases on every push to main
@@ -94,9 +95,14 @@ The GUI file names follow the SDK 5+ convention: `index.view` and `widget.defs`
 
 ### App icon
 
-`package.json` points `fitbit.iconFile` at `resources/icon.png`, and the build
-fails if that file is missing. The icon is not committed to this repository, so
-add an **80 × 80 px PNG** at `resources/icon.png` before building.
+`package.json` points `fitbit.iconFile` at `resources/icon.png`, and a
+**80 × 80 px PNG** is included at that path: a dark navy field with the
+decorative ring, the pink heart and cyan quarter ticks, matching the face itself.
+Replace it with any 80 × 80 px PNG to rebrand.
+
+The build does not fail when the file is absent — it exits successfully but packs
+no icon into the device bundle — so a missing icon is easy to miss until you see
+it on the watch.
 
 ## Setup
 
@@ -196,7 +202,7 @@ this repository follows [Conventional Commits](https://www.conventionalcommits.o
 
 | Symptom                                | Fix                                                        |
 | -------------------------------------- | ---------------------------------------------------------- |
-| Build fails on `resources/icon.png`    | Add an 80 × 80 px PNG at that path                         |
+| Icon missing on the watch            | Confirm `resources/icon.png` is an 80 × 80 px PNG and rebuild |
 | `Project configuration is invalid`     | Check `fitbit.buildTargets` against the installed SDK major |
 | Device never appears over the bridge   | Enable the developer bridge on the watch *and* in the app   |
 | Stale face after an install            | Re-run `connect device` then `install`                     |
