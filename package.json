@@ -26,6 +26,8 @@
   },
   "scripts": {
     "build": "fitbit-build",
+    "check:icon": "node scripts/check-icon.js",
+    "check:fba-icon": "node scripts/check-fba-icon.js",
     "debug": "fitbit"
   }
 }
