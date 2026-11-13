@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify app icon
+        run: npm run check:icon
+
       - name: Build
         run: npm run build
 
